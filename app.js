@@ -19,7 +19,7 @@ const updateMcSubStatus=async()=>{
         //     })
         // }
         if(mc.status==="busy"){
-            const [log]=await mcTransactionDb.find({qrCode:mc.qrCode}).sort({_id:-1}).toArray();
+            const [log]=await mcTransactionDb.find({mcId:mc._id}).sort({_id:-1}).toArray();
             if(log.isReceived && log.isEmpty){
             //      const updateMc=await iMemoryCard.updateOne({_id:new ObjectId(mc._id)},{
             //     $set:{
